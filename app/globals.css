@@ -1,0 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --volt: #3d7bff;
+  --volt-home: #c89b3c;
+  --bg: #ffffff;
+  --bg-muted: #f5f5f5;
+  --ink: #111111;
+  --ink-soft: #707072;
+  --ink-faint: #9e9ea0;
+  --dark: #0a0a0a;
+  --dark-soft: #141414;
+  --line: #e5e5e5;
+}
+
+html,
+body {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--volt);
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+}
+
+.font-display,
+.text-display,
+.font-heading {
+  font-family: "Archivo Expanded", "Archivo", system-ui, sans-serif;
+}
+
+.text-display {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.tt-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 5vw, 72px);
+  padding-right: clamp(20px, 5vw, 72px);
+}
+
+.tt-section-dark {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255, 255, 255, 0.08), transparent 55%),
+    repeating-linear-gradient(122deg, #141414 0 1px, transparent 1px 15px),
+    var(--dark);
+  color: #ffffff;
+}
+
+.tt-grid-lines {
+  background: repeating-linear-gradient(122deg, #e6e6e6 0 1px, transparent 1px 13px), #f0f0f0;
+}
+
+.tt-dark-grid {
+  background: repeating-linear-gradient(122deg, #1c1c1c 0 1px, transparent 1px 14px), #141414;
+}
+
+.tt-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font: 600 13px "Archivo", system-ui, sans-serif;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.tt-eyebrow::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: var(--volt);
+  flex: 0 0 auto;
+}
+
+.tt-pill {
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  padding: 11px 22px;
+  font: 600 13px "Archivo", system-ui, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 999px;
+  padding: 15px 28px;
+  font: 700 15px "Archivo", system-ui, sans-serif;
+  letter-spacing: 0.02em;
+  transition: filter 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.tt-btn-primary {
+  background: var(--volt);
+  color: #111111;
+}
+
+.tt-btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.tt-btn-primary:hover,
+.tt-btn-secondary:hover {
+  filter: brightness(1.06);
+}
+
+.tt-link-line {
+  width: fit-content;
+  border-bottom: 1px solid var(--volt);
+  padding-bottom: 4px;
+}
+
+.tt-card-white {
+  background: #ffffff;
+  border: 1px solid var(--line);
+}
+
+.tt-card-dark {
+  background: #111111;
+  color: #ffffff;
+}
+
+.tt-muted {
+  color: var(--ink-soft);
+}
+
+.tt-faint {
+  color: var(--ink-faint);
+}
+
+.tt-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--volt);
+  animation: pulse-dot 1.5s infinite;
+}
+
+.tt-scroll-cue {
+  animation: cue 1.8s ease-in-out infinite;
+}
+
+.tt-marquee {
+  animation: marquee 46s linear infinite;
+}
+
+.tt-count {
+  font-variant-numeric: tabular-nums;
+}
+
+.tt-grain::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 2.6s steps(4) infinite;
+}
+
+.article-body {
+  color: var(--ink);
+  font: 400 17px/1.8 "Archivo", system-ui, sans-serif;
+}
+
+.article-body > * + * {
+  margin-top: 1.25rem;
+}
+
+.article-body h2,
+.article-body h3 {
+  font-family: "Archivo Expanded", "Archivo", system-ui, sans-serif;
+  text-transform: uppercase;
+  line-height: 0.96;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.article-body h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  margin-top: 2.4rem;
+}
+
+.article-body h3 {
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  margin-top: 1.8rem;
+}
+
+.article-body ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.article-body strong {
+  color: var(--ink);
+}
+
+.article-body a {
+  border-bottom: 1px solid var(--volt);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes grain {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-6%, 4%);
+  }
+  40% {
+    transform: translate(4%, -6%);
+  }
+  60% {
+    transform: translate(-4%, -2%);
+  }
+  80% {
+    transform: translate(5%, 5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes cue {
+  0% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+}

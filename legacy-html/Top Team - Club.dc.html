@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#3D7BFF;color:#fff}
+  @keyframes slowzoom{0%{transform:scale(1)}100%{transform:scale(1.12)}}
+  @keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-6%,4%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-4%,-2%)}80%{transform:translate(5%,5%)}100%{transform:translate(0,0)}}
+  @keyframes heroLine{from{transform:translateY(112%)}to{transform:translateY(0)}}
+  @keyframes floatIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+<div id="tt-club" style="--volt:#3D7BFF;background:#fff;color:#111;font-family:'Archivo',system-ui,sans-serif;overflow-x:hidden;position:relative;">
+  <dc-import name="TT Nav" active="club" hint-size="100%,72px"></dc-import>
+
+  <!-- HEADER -->
+  <section style="position:relative;background:#0a0a0a;color:#fff;overflow:hidden;min-height:clamp(440px,58vh,660px);display:flex;align-items:flex-end;">
+    <div data-motion-el style="position:absolute;inset:0;animation:slowzoom 24s ease-in-out infinite alternate;background:radial-gradient(120% 90% at 72% 0%,rgba(255,255,255,.09),transparent 55%),repeating-linear-gradient(122deg,#141414 0 1px,transparent 1px 15px),#0a0a0a;"></div>
+    <div data-motion-el style="position:absolute;inset:-20%;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);opacity:.06;mix-blend-mode:screen;animation:grain 2.6s steps(4) infinite;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.6),rgba(10,10,10,.12) 45%,rgba(10,10,10,.92));"></div>
+    <div style="position:relative;z-index:2;max-width:1440px;margin:0 auto;width:100%;padding:0 clamp(20px,5vw,72px) clamp(48px,7vh,84px);">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;"><span style="width:9px;height:9px;background:var(--volt,#3D7BFF);"></span><span style="font:600 13px 'Archivo',sans-serif;letter-spacing:.28em;">THE CLUB</span></div>
+      <h1 style="font-family:'Archivo Expanded',sans-serif;font-weight:900;letter-spacing:-.02em;line-height:.86;text-transform:uppercase;font-size:clamp(46px,9vw,132px);margin:0;">
+        <span style="display:block;overflow:hidden;"><span data-motion-el style="display:block;animation:heroLine .95s cubic-bezier(.16,1,.3,1) both;animation-delay:.15s;">Since 1921.</span></span>
+        <span style="display:block;overflow:hidden;"><span data-motion-el style="display:block;color:var(--volt,#3D7BFF);animation:heroLine .95s cubic-bezier(.16,1,.3,1) both;animation-delay:.28s;">Still restless.</span></span>
+      </h1>
+      <p data-motion-el style="max-width:560px;margin-top:26px;font:400 clamp(15px,1.3vw,19px)/1.6 'Archivo',sans-serif;color:rgba(255,255,255,.78);animation:floatIn .8s cubic-bezier(.16,1,.3,1) both;animation-delay:.5s;">A dockside club that never learned to sit still. A century of work, and the same idea underneath all of it.</p>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section style="background:#fff;color:#111;padding:clamp(80px,10vw,150px) clamp(20px,5vw,72px);">
+    <div style="max-width:1440px;margin:0 auto;">
+      <h2 data-reveal style="opacity:0;transform:translateY(40px);max-width:1050px;font-family:'Archivo Expanded',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.02;text-transform:uppercase;font-size:clamp(28px,4.4vw,64px);">We were built by people who worked nights. That is still who we play for.</h2>
+      <div style="margin-top:clamp(48px,6vw,88px);display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,3vw,48px);">
+        <div data-reveal data-delay="0" style="opacity:0;transform:translateY(40px);border-top:2px solid #111;padding-top:22px;">
+          <div style="font:800 clamp(22px,2vw,30px) 'Archivo Expanded',sans-serif;letter-spacing:-.01em;text-transform:uppercase;">Discipline</div>
+          <p style="margin-top:14px;font:400 16px/1.7 'Archivo',sans-serif;color:#707072;">The unglamorous work, done first and done every day. Talent is assumed here — application is not.</p>
+        </div>
+        <div data-reveal data-delay="120" style="opacity:0;transform:translateY(40px);border-top:2px solid #111;padding-top:22px;">
+          <div style="font:800 clamp(22px,2vw,30px) 'Archivo Expanded',sans-serif;letter-spacing:-.01em;text-transform:uppercase;">Together</div>
+          <p style="margin-top:14px;font:400 16px/1.7 'Archivo',sans-serif;color:#707072;">No one bigger than the badge. The name on the front matters more than the name on the back.</p>
+        </div>
+        <div data-reveal data-delay="240" style="opacity:0;transform:translateY(40px);border-top:2px solid var(--volt,#3D7BFF);padding-top:22px;">
+          <div style="font:800 clamp(22px,2vw,30px) 'Archivo Expanded',sans-serif;letter-spacing:-.01em;text-transform:uppercase;color:var(--volt,#3D7BFF);">No passengers</div>
+          <p style="margin-top:14px;font:400 16px/1.7 'Archivo',sans-serif;color:#707072;">Ninety minutes, eleven players, one standard. If you can't run, you can't wear it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE TIMELINE -->
+  <section style="background:#0a0a0a;color:#fff;padding:clamp(80px,10vw,150px) clamp(20px,5vw,72px);overflow:hidden;">
+    <div style="max-width:1440px;margin:0 auto;">
+      <div data-reveal style="opacity:0;transform:translateY(40px);display:flex;align-items:center;gap:12px;margin-bottom:14px;"><span style="width:9px;height:9px;background:var(--volt,#3D7BFF);"></span><span style="font:600 13px 'Archivo',sans-serif;letter-spacing:.26em;">A HUNDRED-YEAR RUN</span></div>
+      <h2 data-reveal data-delay="80" style="opacity:0;transform:translateY(40px);font-family:'Archivo Expanded',sans-serif;font-weight:800;letter-spacing:-.015em;line-height:.92;text-transform:uppercase;font-size:clamp(34px,5vw,64px);margin-bottom:clamp(40px,5vw,64px);">Pick a year</h2>
+
+      <!-- year rail -->
+      <div data-reveal data-delay="120" style="opacity:0;transform:translateY(40px);position:relative;margin-bottom:clamp(44px,5vw,68px);">
+        <div style="position:absolute;left:0;right:0;top:6px;height:1px;background:#2a2a2a;"></div>
+        <div style="position:relative;display:flex;gap:clamp(20px,4vw,64px);overflow-x:auto;padding-bottom:6px;">
+          <sc-for list="{{ eras }}" as="e" hint-placeholder-count="7">
+            <button data-year="{{ e.i }}" style="flex:0 0 auto;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:0;color:#707072;transition:color .3s;">
+              <span data-dot style="width:13px;height:13px;border-radius:50%;background:#333;transition:transform .3s,background .3s;"></span>
+              <span style="font:800 clamp(20px,2.2vw,30px) 'Archivo Expanded',sans-serif;letter-spacing:-.01em;color:inherit;">{{ e.year }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- detail panels -->
+      <div data-reveal data-delay="180" style="opacity:0;transform:translateY(40px);">
+        <sc-for list="{{ eras }}" as="e" hint-placeholder-count="1">
+          <div data-era="{{ e.i }}" style="display:none;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,4vw,64px);align-items:center;">
+            <div style="position:relative;aspect-ratio:4/3;background:#141414;overflow:hidden;">
+              <div style="position:absolute;inset:0;background:repeating-linear-gradient(122deg,#1e1e1e 0 1px,transparent 1px 15px);"></div>
+              <span style="position:absolute;bottom:16px;left:16px;font:500 11px 'Archivo',monospace;letter-spacing:.18em;color:rgba(255,255,255,.5);">ARCHIVE · {{ e.year }} · [drop photo]</span>
+              <span style="position:absolute;top:16px;right:16px;font:800 clamp(30px,4vw,56px) 'Archivo Expanded',sans-serif;color:rgba(255,255,255,.08);">{{ e.year }}</span>
+            </div>
+            <div>
+              <div style="font:700 13px 'Archivo',sans-serif;letter-spacing:.2em;color:var(--volt,#3D7BFF);margin-bottom:16px;">{{ e.year }} — {{ e.tag }}</div>
+              <h3 style="font-family:'Archivo Expanded',sans-serif;font-weight:800;letter-spacing:-.015em;line-height:.98;text-transform:uppercase;font-size:clamp(26px,3.2vw,46px);">{{ e.head }}</h3>
+              <p style="margin-top:20px;max-width:440px;font:400 16px/1.7 'Archivo',sans-serif;color:rgba(255,255,255,.72);">{{ e.body }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONOURS -->
+  <section style="background:#f5f5f5;color:#111;padding:clamp(80px,10vw,140px) clamp(20px,5vw,72px);border-top:1px solid #e5e5e5;">
+    <div style="max-width:1440px;margin:0 auto;">
+      <div data-reveal style="opacity:0;transform:translateY(40px);display:flex;align-items:center;gap:12px;margin-bottom:14px;"><span style="width:9px;height:9px;background:var(--volt,#3D7BFF);"></span><span style="font:600 13px 'Archivo',sans-serif;letter-spacing:.26em;">IN THE CABINET</span></div>
+      <h2 data-reveal data-delay="80" style="opacity:0;transform:translateY(40px);font-family:'Archivo Expanded',sans-serif;font-weight:800;letter-spacing:-.015em;line-height:.92;text-transform:uppercase;font-size:clamp(30px,4.4vw,58px);margin-bottom:clamp(44px,5vw,68px);">A hundred years, counted</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(28px,3vw,48px);">
+        <div data-reveal data-delay="0" style="opacity:0;transform:translateY(40px);">
+          <span data-count="8" style="font:800 clamp(56px,8vw,104px)/.85 'Archivo Expanded',sans-serif;letter-spacing:-.02em;">0</span>
+          <div style="width:44px;height:4px;background:var(--volt,#3D7BFF);margin:18px 0 12px;"></div>
+          <div style="font:600 13px 'Archivo',sans-serif;letter-spacing:.14em;color:#707072;">LEAGUE TITLES</div>
+        </div>
+        <div data-reveal data-delay="100" style="opacity:0;transform:translateY(40px);">
+          <span data-count="5" style="font:800 clamp(56px,8vw,104px)/.85 'Archivo Expanded',sans-serif;letter-spacing:-.02em;">0</span>
+          <div style="width:44px;height:4px;background:var(--volt,#3D7BFF);margin:18px 0 12px;"></div>
+          <div style="font:600 13px 'Archivo',sans-serif;letter-spacing:.14em;color:#707072;">DOMESTIC CUPS</div>
+        </div>
+        <div data-reveal data-delay="200" style="opacity:0;transform:translateY(40px);">
+          <span data-count="104" style="font:800 clamp(56px,8vw,104px)/.85 'Archivo Expanded',sans-serif;letter-spacing:-.02em;">0</span>
+          <div style="width:44px;height:4px;background:var(--volt,#3D7BFF);margin:18px 0 12px;"></div>
+          <div style="font:600 13px 'Archivo',sans-serif;letter-spacing:.14em;color:#707072;">SEASONS PLAYED</div>
+        </div>
+        <div data-reveal data-delay="300" style="opacity:0;transform:translateY(40px);">
+          <span data-count="37" style="font:800 clamp(56px,8vw,104px)/.85 'Archivo Expanded',sans-serif;letter-spacing:-.02em;">0</span>
+          <div style="width:44px;height:4px;background:var(--volt,#3D7BFF);margin:18px 0 12px;"></div>
+          <div style="font:600 13px 'Archivo',sans-serif;letter-spacing:.14em;color:#707072;">ACADEMY INT'L CAPS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="TT Footer" hint-size="100%,480px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: &quot;100%&quot;, &quot;height&quot;: &quot;100%&quot; },
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#3D7BFF&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#D6FF3D&quot;, &quot;#E8452A&quot;, &quot;#3D7BFF&quot;, &quot;#C89B3C&quot;], &quot;section&quot;: &quot;Brand&quot; },
+  &quot;motion&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Motion&quot; }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      eras: [
+        { i: '0', year: '1921', tag: 'FOUNDED', head: 'Born on the docks', body: 'Formed by dockworkers on a patch of reclaimed land by the river. Black and white were chosen because they were the cheapest dyes in the yard.' },
+        { i: '1', year: '1958', tag: 'FIRST TITLE', head: 'The night-shift champions', body: 'A side built almost entirely of local men takes the division by two points, playing every home game to a full house.' },
+        { i: '2', year: '1979', tag: 'THE FORGE', head: 'A home on the river', body: 'The club leaves the cramped old ground for The Forge — 42,000 seats on the site of the shipyard that raised it.' },
+        { i: '3', year: '1994', tag: 'EUROPE', head: 'Continental nights', body: "The first European campaign ends in a quarter-final the city still argues about, thirty years on." },
+        { i: '4', year: '2011', tag: 'THE REBUILD', head: 'Down, then rebuilt', body: 'Relegation forces a reckoning. A five-year plan rewires the academy and refuses to buy its way back.' },
+        { i: '5', year: '2023', tag: 'BACK ON TOP', head: 'Promotion and a cup', body: 'Two trophies lifted in a single May — the payoff for a decade of patience and a homegrown spine.' },
+        { i: '6', year: '2025', tag: 'NOW', head: 'Top of the table', body: 'The youngest squad in the division sits first at the winter break. The restless streak, intact.' }
+      ]
+    };
+  }
+  componentDidMount() { this._raf = requestAnimationFrame(() => this.setup()); }
+  componentWillUnmount() { if (this._raf) cancelAnimationFrame(this._raf); }
+  async setup() {
+    const root = document.getElementById('tt-club');
+    if (!root) return;
+    try { const m = await import('./tt-motion.js'); m.initMotion(root, { motion: this.props.motion, accent: this.props.accentColor }); } catch (e) {}
+    this.wireTimeline(root);
+  }
+  wireTimeline(root) {
+    const years = [...root.querySelectorAll('[data-year]')];
+    const panels = [...root.querySelectorAll('[data-era]')];
+    const select = (i) => {
+      years.forEach(y => {
+        const on = y.getAttribute('data-year') === String(i);
+        y.style.color = on ? '#ffffff' : '#707072';
+        const dot = y.querySelector('[data-dot]');
+        if (dot) { dot.style.background = on ? 'var(--volt,#3D7BFF)' : '#333333'; dot.style.transform = on ? 'scale(1.5)' : 'scale(1)'; }
+      });
+      panels.forEach(p => { p.style.display = p.getAttribute('data-era') === String(i) ? 'grid' : 'none'; });
+    };
+    years.forEach(y => y.addEventListener('click', () => select(parseInt(y.getAttribute('data-year'), 10))));
+    select(0);
+  }
+}
+</script>
+</body>
+</html>

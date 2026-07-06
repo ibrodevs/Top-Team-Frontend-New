@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#3D7BFF;color:#fff}
+  @keyframes slowzoom{0%{transform:scale(1)}100%{transform:scale(1.12)}}
+  @keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-6%,4%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-4%,-2%)}80%{transform:translate(5%,5%)}100%{transform:translate(0,0)}}
+  @keyframes heroLine{from{transform:translateY(112%)}to{transform:translateY(0)}}
+  @keyframes floatIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+  @keyframes scan{0%{transform:translateY(-12px)}100%{transform:translateY(560px)}}
+</style>
+</helmet>
+<div id="tt-team" style="--volt:#3D7BFF;background:#fff;color:#111;font-family:'Archivo',system-ui,sans-serif;overflow-x:hidden;position:relative;">
+  <dc-import name="TT Nav" active="team" hint-size="100%,72px"></dc-import>
+
+  <!-- HEADER -->
+  <section style="position:relative;background:#0a0a0a;color:#fff;overflow:hidden;min-height:clamp(420px,54vh,620px);display:flex;align-items:flex-end;">
+    <div data-motion-el style="position:absolute;inset:0;animation:slowzoom 24s ease-in-out infinite alternate;background:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.09),transparent 55%),repeating-linear-gradient(122deg,#141414 0 1px,transparent 1px 15px),#0a0a0a;"></div>
+    <div data-motion-el style="position:absolute;inset:-20%;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);opacity:.06;mix-blend-mode:screen;animation:grain 2.6s steps(4) infinite;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.6),rgba(10,10,10,.12) 45%,rgba(10,10,10,.92));"></div>
+    <div style="position:relative;z-index:2;max-width:1440px;margin:0 auto;width:100%;padding:0 clamp(20px,5vw,72px) clamp(48px,7vh,84px);">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;"><span style="width:9px;height:9px;background:var(--volt,#3D7BFF);"></span><span style="font:600 13px 'Archivo',sans-serif;letter-spacing:.28em;">THE SQUAD · 2025/26</span></div>
+      <h1 style="font-family:'Archivo Expanded',sans-serif;font-weight:900;letter-spacing:-.02em;line-height:.86;text-transform:uppercase;font-size:clamp(46px,9vw,132px);margin:0;">
+        <span style="display:block;overflow:hidden;"><span data-motion-el style="display:block;animation:heroLine .95s cubic-bezier(.16,1,.3,1) both;animation-delay:.15s;">Meet the</span></span>
+        <span style="display:block;overflow:hidden;"><span data-motion-el style="display:block;color:var(--volt,#3D7BFF);animation:heroLine .95s cubic-bezier(.16,1,.3,1) both;animation-delay:.28s;">First team</span></span>
+      </h1>
+      <p data-motion-el style="max-width:560px;margin-top:26px;font:400 clamp(15px,1.3vw,19px)/1.6 'Archivo',sans-serif;color:rgba(255,255,255,.78);animation:floatIn .8s cubic-bezier(.16,1,.3,1) both;animation-delay:.5s;">Hover any player to bring the still to life. The youngest squad in the division — nine of them raised in the academy.</p>
+    </div>
+  </section>
+
+  <!-- FILTER + GRID -->
+  <section style="background:#fff;color:#111;padding:clamp(60px,7vw,110px) clamp(20px,5vw,72px) clamp(80px,10vw,140px);">
+    <div style="max-width:1440px;margin:0 auto;">
+      <div data-reveal style="opacity:0;transform:translateY(40px);display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(36px,4vw,56px);">
+        <button data-filter="all" style="cursor:pointer;background:#111;color:#fff;border:1px solid #111;border-radius:30px;padding:11px 22px;font:600 13px 'Archivo',sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:.25s;">All</button>
+        <button data-filter="gk" style="cursor:pointer;background:transparent;color:#111;border:1px solid #e5e5e5;border-radius:30px;padding:11px 22px;font:600 13px 'Archivo',sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:.25s;">Goalkeepers</button>
+        <button data-filter="def" style="cursor:pointer;background:transparent;color:#111;border:1px solid #e5e5e5;border-radius:30px;padding:11px 22px;font:600 13px 'Archivo',sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:.25s;">Defence</button>
+        <button data-filter="mid" style="cursor:pointer;background:transparent;color:#111;border:1px solid #e5e5e5;border-radius:30px;padding:11px 22px;font:600 13px 'Archivo',sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:.25s;">Midfield</button>
+        <button data-filter="fwd" style="cursor:pointer;background:transparent;color:#111;border:1px solid #e5e5e5;border-radius:30px;padding:11px 22px;font:600 13px 'Archivo',sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:.25s;">Attack</button>
+      </div>
+
+      <div data-teamgrid style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:clamp(12px,1.5vw,20px);">
+        <sc-for list="{{ players }}" as="p" hint-placeholder-count="16">
+          <div data-player data-pos="{{ p.pos }}" data-reveal data-delay="{{ p.delay }}" style="position:relative;aspect-ratio:3/4;background:#f0f0f0;overflow:hidden;cursor:pointer;opacity:0;transform:translateY(40px);">
+            <div data-pimg style="position:absolute;inset:0;transition:transform .7s cubic-bezier(.16,1,.3,1);background:repeating-linear-gradient(122deg,#e6e6e6 0 1px,transparent 1px 13px),#f0f0f0;"></div>
+            <div data-scan data-motion-el style="position:absolute;left:0;right:0;top:0;height:2px;background:var(--volt,#3D7BFF);opacity:0;transition:opacity .3s;animation:scan 2.4s linear infinite;box-shadow:0 0 14px var(--volt,#3D7BFF);"></div>
+            <span style="position:absolute;top:14px;left:14px;font:600 11px 'Archivo',sans-serif;letter-spacing:.16em;color:#9e9ea0;">#{{ p.num }}</span>
+            <div data-badge style="position:absolute;top:12px;right:12px;opacity:0;transition:opacity .3s;display:flex;align-items:center;gap:6px;background:var(--volt,#3D7BFF);color:#fff;font:700 10px 'Archivo',sans-serif;letter-spacing:.14em;padding:6px 10px;"><span style="width:0;height:0;border-left:7px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent;"></span>MOTION</div>
+            <div style="position:absolute;left:0;right:0;bottom:0;padding:16px;display:flex;align-items:flex-end;justify-content:space-between;background:linear-gradient(transparent,rgba(255,255,255,.92) 62%);">
+              <div>
+                <div style="font:800 clamp(15px,1.4vw,20px) 'Archivo Expanded',sans-serif;letter-spacing:-.01em;color:#111;">{{ p.n }}</div>
+                <div style="font:600 10px 'Archivo',sans-serif;letter-spacing:.18em;color:#707072;margin-top:2px;">{{ p.role }}</div>
+              </div>
+              <span style="font:800 clamp(26px,3vw,40px)/.8 'Archivo Expanded',sans-serif;color:#dcdcdc;">{{ p.num }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- COACHING STAFF -->
+  <section style="background:#0a0a0a;color:#fff;padding:clamp(80px,10vw,140px) clamp(20px,5vw,72px);">
+    <div style="max-width:1440px;margin:0 auto;">
+      <div data-reveal style="opacity:0;transform:translateY(40px);display:flex;align-items:center;gap:12px;margin-bottom:14px;"><span style="width:9px;height:9px;background:var(--volt,#3D7BFF);"></span><span style="font:600 13px 'Archivo',sans-serif;letter-spacing:.26em;">THE DUGOUT</span></div>
+      <h2 data-reveal data-delay="80" style="opacity:0;transform:translateY(40px);font-family:'Archivo Expanded',sans-serif;font-weight:800;letter-spacing:-.015em;line-height:.92;text-transform:uppercase;font-size:clamp(30px,4.4vw,58px);margin-bottom:clamp(40px,5vw,64px);">The people behind it</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(20px,2.5vw,36px);">
+        <sc-for list="{{ staff }}" as="s" hint-placeholder-count="4">
+          <div data-reveal data-delay="{{ s.delay }}" style="opacity:0;transform:translateY(40px);">
+            <div style="position:relative;aspect-ratio:1/1;background:#141414;overflow:hidden;">
+              <div style="position:absolute;inset:0;background:repeating-linear-gradient(122deg,#1e1e1e 0 1px,transparent 1px 13px);"></div>
+              <span style="position:absolute;bottom:12px;left:12px;font:500 10px 'Archivo',monospace;letter-spacing:.16em;color:rgba(255,255,255,.45);">[portrait]</span>
+            </div>
+            <div style="margin-top:16px;font:800 clamp(16px,1.4vw,20px) 'Archivo Expanded',sans-serif;letter-spacing:-.01em;">{{ s.n }}</div>
+            <div style="margin-top:4px;font:600 11px 'Archivo',sans-serif;letter-spacing:.16em;color:var(--volt,#3D7BFF);">{{ s.role }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="TT Footer" hint-size="100%,480px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: &quot;100%&quot;, &quot;height&quot;: &quot;100%&quot; },
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#3D7BFF&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#D6FF3D&quot;, &quot;#E8452A&quot;, &quot;#3D7BFF&quot;, &quot;#C89B3C&quot;], &quot;section&quot;: &quot;Brand&quot; },
+  &quot;motion&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Motion&quot; }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      players: [
+        { n: 'R. VITTORI', role: 'GOALKEEPER', num: '01', pos: 'gk', delay: '0' },
+        { n: 'T. NOVAK', role: 'GOALKEEPER', num: '13', pos: 'gk', delay: '60' },
+        { n: 'S. BJÖRK', role: 'RIGHT BACK', num: '02', pos: 'def', delay: '120' },
+        { n: 'H. TANAKA', role: 'CENTRE BACK', num: '03', pos: 'def', delay: '0' },
+        { n: 'K. OSEI', role: 'CENTRE BACK', num: '04', pos: 'def', delay: '60' },
+        { n: 'P. RENARD', role: 'LEFT BACK', num: '05', pos: 'def', delay: '120' },
+        { n: 'J. OKONKWO', role: 'DEFENDER', num: '15', pos: 'def', delay: '0' },
+        { n: 'M. ABIOLA', role: 'MIDFIELD', num: '06', pos: 'mid', delay: '60' },
+        { n: 'L. HAALSTED', role: 'MIDFIELD', num: '08', pos: 'mid', delay: '120' },
+        { n: 'C. DUARTE', role: 'PLAYMAKER', num: '10', pos: 'mid', delay: '0' },
+        { n: 'E. VOSS', role: 'MIDFIELD', num: '14', pos: 'mid', delay: '60' },
+        { n: 'N. FARELL', role: 'MIDFIELD', num: '20', pos: 'mid', delay: '120' },
+        { n: 'Y. KANE', role: 'WINGER', num: '07', pos: 'fwd', delay: '0' },
+        { n: 'A. MORENO', role: 'STRIKER', num: '09', pos: 'fwd', delay: '60' },
+        { n: 'D. FALK', role: 'WINGER', num: '11', pos: 'fwd', delay: '120' },
+        { n: 'R. SILVA', role: 'STRIKER', num: '19', pos: 'fwd', delay: '0' }
+      ],
+      staff: [
+        { n: 'V. AMADORI', role: 'HEAD COACH', delay: '0' },
+        { n: 'G. PRICE', role: 'ASSISTANT', delay: '90' },
+        { n: 'D. KEHOE', role: 'GK COACH', delay: '180' },
+        { n: 'S. MBEKI', role: 'HEAD OF ACADEMY', delay: '270' }
+      ]
+    };
+  }
+  componentDidMount() { this._raf = requestAnimationFrame(() => this.setup()); }
+  componentWillUnmount() { if (this._raf) cancelAnimationFrame(this._raf); }
+  async setup() {
+    const root = document.getElementById('tt-team');
+    if (!root) return;
+    try { const m = await import('./tt-motion.js'); m.initMotion(root, { motion: this.props.motion, accent: this.props.accentColor }); } catch (e) {}
+    this.wireFilter(root);
+  }
+  wireFilter(root) {
+    const tabs = [...root.querySelectorAll('[data-filter]')];
+    const tiles = [...root.querySelectorAll('[data-player]')];
+    const apply = (f) => {
+      tabs.forEach(t => {
+        const on = t.getAttribute('data-filter') === f;
+        t.style.background = on ? '#111111' : 'transparent';
+        t.style.color = on ? '#ffffff' : '#111111';
+        t.style.borderColor = on ? '#111111' : '#e5e5e5';
+      });
+      tiles.forEach(tile => {
+        const show = f === 'all' || tile.getAttribute('data-pos') === f;
+        tile.style.display = show ? 'block' : 'none';
+      });
+    };
+    tabs.forEach(t => t.addEventListener('click', () => apply(t.getAttribute('data-filter'))));
+    apply('all');
+  }
+}
+</script>
+</body>
+</html>

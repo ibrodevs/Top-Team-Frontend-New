@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#3D7BFF;color:#fff}
+  @keyframes slowzoom{0%{transform:scale(1)}100%{transform:scale(1.12)}}
+  @keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-6%,4%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-4%,-2%)}80%{transform:translate(5%,5%)}100%{transform:translate(0,0)}}
+  @keyframes heroLine{from{transform:translateY(112%)}to{transform:translateY(0)}}
+  @keyframes floatIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+<div id="tt-matches" style="--volt:#3D7BFF;background:#fff;color:#111;font-family:'Archivo',system-ui,sans-serif;overflow-x:hidden;position:relative;">
+  <dc-import name="TT Nav" active="matches" hint-size="100%,72px"></dc-import>
+
+  <!-- HEADER -->
+  <section style="position:relative;background:#0a0a0a;color:#fff;overflow:hidden;min-height:clamp(380px,48vh,560px);display:flex;align-items:flex-end;">
+    <div data-motion-el style="position:absolute;inset:0;animation:slowzoom 24s ease-in-out infinite alternate;background:radial-gradient(120% 90% at 60% 0%,rgba(255,255,255,.09),transparent 55%),repeating-linear-gradient(122deg,#141414 0 1px,transparent 1px 15px),#0a0a0a;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.6),rgba(10,10,10,.15) 45%,rgba(10,10,10,.92));"></div>
+    <div style="position:relative;z-index:2;max-width:1440px;margin:0 auto;width:100%;padding:0 clamp(20px,5vw,72px) clamp(44px,6vh,72px);">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;"><span style="width:9px;height:9px;background:var(--volt,#3D7BFF);"></span><span style="font:600 13px 'Archivo',sans-serif;letter-spacing:.28em;">MATCHES · PREMIER DIVISION</span></div>
+      <h1 style="font-family:'Archivo Expanded',sans-serif;font-weight:900;letter-spacing:-.02em;line-height:.86;text-transform:uppercase;font-size:clamp(46px,9vw,132px);margin:0;">
+        <span style="display:block;overflow:hidden;"><span data-motion-el style="display:block;animation:heroLine .95s cubic-bezier(.16,1,.3,1) both;animation-delay:.15s;">Fixtures</span></span>
+        <span style="display:block;overflow:hidden;"><span data-motion-el style="display:block;color:var(--volt,#3D7BFF);animation:heroLine .95s cubic-bezier(.16,1,.3,1) both;animation-delay:.28s;">&amp; results</span></span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- FEATURED NEXT MATCH -->
+  <section style="position:relative;background:#111;color:#fff;overflow:hidden;padding:clamp(64px,7vw,110px) clamp(20px,5vw,72px);">
+    <div style="position:absolute;inset:0;background:radial-gradient(90% 120% at 85% 20%,rgba(61,123,255,.10),transparent 60%),repeating-linear-gradient(122deg,#161616 0 1px,transparent 1px 16px);"></div>
+    <div style="position:relative;max-width:1440px;margin:0 auto;">
+      <div data-reveal style="opacity:0;transform:translateY(40px);display:flex;align-items:center;gap:12px;margin-bottom:34px;"><span style="width:9px;height:9px;background:var(--volt,#3D7BFF);"></span><span style="font:600 13px 'Archivo',sans-serif;letter-spacing:.26em;">NEXT UP · MATCHDAY 22</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:end;">
+        <div data-reveal data-delay="80" style="opacity:0;transform:translateY(40px);">
+          <div style="font:600 13px 'Archivo',sans-serif;letter-spacing:.2em;color:var(--volt,#3D7BFF);margin-bottom:24px;">SATURDAY 15:00 · THE FORGE · LEAGUE DERBY</div>
+          <div style="display:flex;align-items:center;gap:clamp(20px,4vw,54px);">
+            <div style="text-align:center;">
+              <div style="width:clamp(60px,7vw,92px);height:clamp(60px,7vw,92px);border:1.5px solid #fff;display:flex;align-items:center;justify-content:center;font:800 clamp(22px,2.6vw,34px) 'Archivo Expanded',sans-serif;margin:0 auto 14px;">TT</div>
+              <div style="font:700 14px 'Archivo',sans-serif;letter-spacing:.06em;">TOP TEAM</div>
+              <div style="font:500 12px 'Archivo',sans-serif;color:#707072;margin-top:2px;">1st · 51 pts</div>
+            </div>
+            <div style="font:800 clamp(18px,2.6vw,30px) 'Archivo Expanded',sans-serif;color:#707072;">VS</div>
+            <div style="text-align:center;">
+              <div style="width:clamp(60px,7vw,92px);height:clamp(60px,7vw,92px);border:1.5px solid #707072;display:flex;align-items:center;justify-content:center;font:800 clamp(22px,2.6vw,34px) 'Archivo Expanded',sans-serif;color:#9e9ea0;margin:0 auto 14px;">NE</div>
+              <div style="font:700 14px 'Archivo',sans-serif;letter-spacing:.06em;color:#9e9ea0;">NORTH END</div>
+              <div style="font:500 12px 'Archivo',sans-serif;color:#707072;margin-top:2px;">6th · 34 pts</div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal data-delay="160" style="opacity:0;transform:translateY(40px);">
+          <div style="font:600 12px 'Archivo',sans-serif;letter-spacing:.24em;color:rgba(255,255,255,.5);margin-bottom:16px;">KICK-OFF IN</div>
+          <div style="display:flex;align-items:flex-start;gap:clamp(10px,2vw,20px);">
+            <div style="text-align:center;"><div data-cd="days" style="font:800 clamp(40px,6vw,80px)/.9 'Archivo Expanded',sans-serif;color:var(--volt,#3D7BFF);font-variant-numeric:tabular-nums;">00</div><div style="font:600 11px 'Archivo',sans-serif;letter-spacing:.2em;color:#707072;margin-top:8px;">DAYS</div></div>
+            <div style="font:800 clamp(32px,5vw,64px)/.9 'Archivo Expanded',sans-serif;color:#333;">:</div>
+            <div style="text-align:center;"><div data-cd="hours" style="font:800 clamp(40px,6vw,80px)/.9 'Archivo Expanded',sans-serif;color:var(--volt,#3D7BFF);font-variant-numeric:tabular-nums;">00</div><div style="font:600 11px 'Archivo',sans-serif;letter-spacing:.2em;color:#707072;margin-top:8px;">HRS</div></div>
+            <div style="font:800 clamp(32px,5vw,64px)/.9 'Archivo Expanded',sans-serif;color:#333;">:</div>
+            <div style="text-align:center;"><div data-cd="mins" style="font:800 clamp(40px,6vw,80px)/.9 'Archivo Expanded',sans-serif;color:var(--volt,#3D7BFF);font-variant-numeric:tabular-nums;">00</div><div style="font:600 11px 'Archivo',sans-serif;letter-spacing:.2em;color:#707072;margin-top:8px;">MIN</div></div>
+            <div style="font:800 clamp(32px,5vw,64px)/.9 'Archivo Expanded',sans-serif;color:#333;">:</div>
+            <div style="text-align:center;"><div data-cd="secs" style="font:800 clamp(40px,6vw,80px)/.9 'Archivo Expanded',sans-serif;color:#fff;font-variant-numeric:tabular-nums;">00</div><div style="font:600 11px 'Archivo',sans-serif;letter-spacing:.2em;color:#707072;margin-top:8px;">SEC</div></div>
+          </div>
+          <button data-magnetic style="margin-top:34px;cursor:pointer;border:none;background:var(--volt,#3D7BFF);color:#fff;border-radius:30px;padding:15px 30px;font:700 15px 'Archivo',sans-serif;letter-spacing:.02em;will-change:transform;transition:filter .25s;" style-hover="filter:brightness(1.08)">Get tickets</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABS: FIXTURES / RESULTS / TABLE -->
+  <section style="background:#fff;color:#111;padding:clamp(60px,7vw,110px) clamp(20px,5vw,72px) clamp(80px,10vw,140px);">
+    <div style="max-width:1180px;margin:0 auto;">
+      <div data-reveal style="opacity:0;transform:translateY(40px);display:flex;gap:10px;margin-bottom:clamp(36px,4vw,52px);flex-wrap:wrap;">
+        <button data-tab="fixtures" style="cursor:pointer;background:#111;color:#fff;border:1px solid #111;border-radius:30px;padding:11px 24px;font:600 13px 'Archivo',sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:.25s;">Fixtures</button>
+        <button data-tab="results" style="cursor:pointer;background:transparent;color:#111;border:1px solid #e5e5e5;border-radius:30px;padding:11px 24px;font:600 13px 'Archivo',sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:.25s;">Results</button>
+        <button data-tab="table" style="cursor:pointer;background:transparent;color:#111;border:1px solid #e5e5e5;border-radius:30px;padding:11px 24px;font:600 13px 'Archivo',sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:.25s;">Table</button>
+      </div>
+
+      <!-- FIXTURES -->
+      <div data-panel="fixtures" data-reveal data-delay="80" style="opacity:0;transform:translateY(40px);">
+        <sc-for list="{{ fixtures }}" as="f" hint-placeholder-count="5">
+          <div style="display:flex;align-items:center;gap:clamp(16px,3vw,40px);flex-wrap:wrap;padding:24px 0;border-bottom:1px solid #e5e5e5;">
+            <div style="min-width:96px;">
+              <div style="font:800 16px 'Archivo Expanded',sans-serif;letter-spacing:.02em;">{{ f.day }}</div>
+              <div style="font:500 13px 'Archivo',sans-serif;color:#707072;margin-top:3px;">{{ f.time }}</div>
+            </div>
+            <div style="min-width:140px;font:600 11px 'Archivo',sans-serif;letter-spacing:.16em;color:#9e9ea0;">{{ f.comp }}</div>
+            <div style="flex:1;min-width:200px;font:700 clamp(16px,1.6vw,22px) 'Archivo',sans-serif;">{{ f.match }}</div>
+            <div style="font:500 13px 'Archivo',sans-serif;color:#707072;">{{ f.venue }}</div>
+            <a href="#" style="font:600 13px 'Archivo',sans-serif;letter-spacing:.04em;color:#111;text-decoration:none;border-bottom:1px solid var(--volt,#3D7BFF);padding-bottom:3px;" style-hover="color:var(--volt,#3D7BFF)">Tickets →</a>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- RESULTS -->
+      <div data-panel="results" style="display:none;">
+        <sc-for list="{{ results }}" as="r" hint-placeholder-count="5">
+          <div style="display:flex;align-items:center;gap:clamp(16px,3vw,40px);flex-wrap:wrap;padding:24px 0;border-bottom:1px solid #e5e5e5;">
+            <div style="min-width:96px;font:500 13px 'Archivo',sans-serif;color:#707072;">{{ r.date }}</div>
+            <div style="min-width:140px;font:600 11px 'Archivo',sans-serif;letter-spacing:.16em;color:#9e9ea0;">{{ r.comp }}</div>
+            <div style="flex:1;min-width:200px;font:700 clamp(16px,1.6vw,22px) 'Archivo',sans-serif;">{{ r.match }}</div>
+            <div style="font:800 clamp(18px,1.8vw,24px) 'Archivo Expanded',sans-serif;letter-spacing:.04em;">{{ r.score }}</div>
+            <span data-res="{{ r.res }}" style="width:26px;height:26px;display:flex;align-items:center;justify-content:center;font:700 12px 'Archivo',sans-serif;">{{ r.res }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- TABLE -->
+      <div data-panel="table" style="display:none;">
+        <div style="display:grid;grid-template-columns:44px 1fr 44px 56px 52px;gap:12px;padding:0 0 16px;border-bottom:1px solid #111;font:700 11px 'Archivo',sans-serif;letter-spacing:.14em;color:#9e9ea0;">
+          <div>#</div><div>CLUB</div><div style="text-align:center;">P</div><div style="text-align:center;">GD</div><div style="text-align:right;">PTS</div>
+        </div>
+        <sc-for list="{{ table }}" as="t" hint-placeholder-count="6">
+          <div data-tt="{{ t.tt }}" style="display:grid;grid-template-columns:44px 1fr 44px 56px 52px;gap:12px;align-items:center;padding:18px 0;border-bottom:1px solid #e5e5e5;">
+            <div style="font:800 16px 'Archivo Expanded',sans-serif;color:#111;">{{ t.pos }}</div>
+            <div style="font:700 clamp(15px,1.4vw,18px) 'Archivo',sans-serif;">{{ t.club }}</div>
+            <div style="text-align:center;font:500 15px 'Archivo',sans-serif;color:#707072;">{{ t.p }}</div>
+            <div style="text-align:center;font:500 15px 'Archivo',sans-serif;color:#707072;">{{ t.gd }}</div>
+            <div style="text-align:right;font:800 17px 'Archivo Expanded',sans-serif;">{{ t.pts }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="TT Footer" hint-size="100%,480px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: &quot;100%&quot;, &quot;height&quot;: &quot;100%&quot; },
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#3D7BFF&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#D6FF3D&quot;, &quot;#E8452A&quot;, &quot;#3D7BFF&quot;, &quot;#C89B3C&quot;], &quot;section&quot;: &quot;Brand&quot; },
+  &quot;motion&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Motion&quot; }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      fixtures: [
+        { day: 'SAT', time: '15:00', comp: 'PREMIER · MD22', match: 'Top Team vs North End', venue: 'The Forge' },
+        { day: 'WED', time: '20:00', comp: 'LEAGUE CUP · QF', match: 'Harbour City vs Top Team', venue: 'Dockside Arena' },
+        { day: 'SAT', time: '15:00', comp: 'PREMIER · MD23', match: 'Westgate vs Top Team', venue: 'Westgate Park' },
+        { day: 'SAT', time: '12:30', comp: 'PREMIER · MD24', match: 'Top Team vs Riverside', venue: 'The Forge' },
+        { day: 'TUE', time: '19:45', comp: 'PREMIER · MD25', match: 'Top Team vs Ashton', venue: 'The Forge' }
+      ],
+      results: [
+        { date: '02 NOV', comp: 'PREMIER · MD21', match: 'Top Team vs Old Mill', score: '3–0', res: 'W' },
+        { date: '26 OCT', comp: 'PREMIER · MD20', match: 'Crownpoint vs Top Team', score: '1–1', res: 'D' },
+        { date: '21 OCT', comp: 'LEAGUE CUP · R4', match: 'Top Team vs Fenwick', score: '2–1', res: 'W' },
+        { date: '18 OCT', comp: 'PREMIER · MD19', match: 'North End vs Top Team', score: '0–2', res: 'W' },
+        { date: '05 OCT', comp: 'PREMIER · MD18', match: 'Top Team vs Dunmore', score: '4–1', res: 'W' }
+      ],
+      table: [
+        { pos: '1', club: 'Top Team', p: '21', gd: '+31', pts: '51', tt: '1' },
+        { pos: '2', club: 'Harbour City', p: '21', gd: '+24', pts: '48', tt: '0' },
+        { pos: '3', club: 'Westgate', p: '21', gd: '+18', pts: '44', tt: '0' },
+        { pos: '4', club: 'Riverside', p: '21', gd: '+9', pts: '39', tt: '0' },
+        { pos: '5', club: 'Ashton', p: '21', gd: '+5', pts: '35', tt: '0' },
+        { pos: '6', club: 'North End', p: '21', gd: '+3', pts: '34', tt: '0' }
+      ]
+    };
+  }
+  componentDidMount() { this._raf = requestAnimationFrame(() => this.setup()); }
+  componentWillUnmount() { if (this._raf) cancelAnimationFrame(this._raf); if (this._cd) clearInterval(this._cd); }
+  async setup() {
+    const root = document.getElementById('tt-matches');
+    if (!root) return;
+    try { const m = await import('./tt-motion.js'); m.initMotion(root, { motion: this.props.motion, accent: this.props.accentColor }); } catch (e) {}
+    this.wireTabs(root);
+    this.styleResults(root);
+    this.highlightTable(root);
+    this.startCountdown(root);
+  }
+  wireTabs(root) {
+    const tabs = [...root.querySelectorAll('[data-tab]')];
+    const panels = [...root.querySelectorAll('[data-panel]')];
+    const apply = (k) => {
+      tabs.forEach(t => {
+        const on = t.getAttribute('data-tab') === k;
+        t.style.background = on ? '#111111' : 'transparent';
+        t.style.color = on ? '#ffffff' : '#111111';
+        t.style.borderColor = on ? '#111111' : '#e5e5e5';
+      });
+      panels.forEach(p => { p.style.display = p.getAttribute('data-panel') === k ? 'block' : 'none'; });
+    };
+    tabs.forEach(t => t.addEventListener('click', () => apply(t.getAttribute('data-tab'))));
+    apply('fixtures');
+  }
+  styleResults(root) {
+    root.querySelectorAll('[data-res]').forEach(el => {
+      const r = el.getAttribute('data-res');
+      if (r === 'W') { el.style.background = '#111111'; el.style.color = '#ffffff'; }
+      else if (r === 'D') { el.style.border = '1px solid #9e9ea0'; el.style.color = '#707072'; }
+      else { el.style.background = '#f5f5f5'; el.style.color = '#9e9ea0'; }
+    });
+  }
+  highlightTable(root) {
+    root.querySelectorAll('[data-tt]').forEach(row => {
+      if (row.getAttribute('data-tt') === '1') {
+        row.style.boxShadow = 'inset 3px 0 0 var(--volt,#3D7BFF)';
+        row.style.paddingLeft = '14px';
+        const club = row.children[1];
+        if (club) club.style.color = 'var(--volt,#3D7BFF)';
+      }
+    });
+  }
+  startCountdown(root) {
+    const target = Date.now() + ((3 * 24 * 3600) + (8 * 3600) + (42 * 60)) * 1000;
+    const pad = (n) => String(n).padStart(2, '0');
+    const tick = () => {
+      let diff = Math.max(0, target - Date.now());
+      const d = Math.floor(diff / 86400000); diff -= d * 86400000;
+      const h = Math.floor(diff / 3600000); diff -= h * 3600000;
+      const m = Math.floor(diff / 60000); diff -= m * 60000;
+      const s = Math.floor(diff / 1000);
+      const set = (k, v) => { const el = root.querySelector('[data-cd="' + k + '"]'); if (el) el.textContent = v; };
+      set('days', pad(d)); set('hours', pad(h)); set('mins', pad(m)); set('secs', pad(s));
+    };
+    tick();
+    this._cd = setInterval(tick, 1000);
+  }
+}
+</script>
+</body>
+</html>

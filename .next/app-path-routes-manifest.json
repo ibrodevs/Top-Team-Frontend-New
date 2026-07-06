@@ -1,0 +1,20 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/club/page": "/club",
+  "/academy/page": "/academy",
+  "/live/page": "/live",
+  "/news/[id]/page": "/news/[id]",
+  "/media/page": "/media",
+  "/fixtures/page": "/fixtures",
+  "/news/page": "/news",
+  "/contact/page": "/contact",
+  "/membership/page": "/membership",
+  "/partners/page": "/partners",
+  "/shop/[id]/page": "/shop/[id]",
+  "/page": "/",
+  "/squad/page": "/squad",
+  "/squad/[id]/page": "/squad/[id]",
+  "/tickets/page": "/tickets",
+  "/stadium/page": "/stadium",
+  "/shop/page": "/shop"
+}
